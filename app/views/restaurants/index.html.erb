@@ -1,0 +1,14 @@
+<div class="container p-4 text-center">
+  <div class="bg-light">
+    <div class="d-inline-flex">
+    <h1 class="pr-4">Welcome to YELP!</h1>
+    <h2> <%= link_to 'Add restaurant', new_restaurant_path, class: "btn btn-primary" %> </h2>
+    </div>
+    <h2>These are all the restaurants around you:</h2>
+  </div>
+  <div class="m-4">
+    <% @restaurants.each do |restaurant| %>
+      <h3><%= link_to restaurant.name, restaurant_path(restaurant.id) %></h3>
+    <% end %>
+  </div>
+</div>
